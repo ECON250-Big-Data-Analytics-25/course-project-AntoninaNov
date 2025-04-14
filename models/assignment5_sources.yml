@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: test_dataset
+    tables:
+      - name: assignment5_input
+        description: Wikipedia pageviews for assignment 5
+
