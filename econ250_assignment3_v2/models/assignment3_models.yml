@@ -1,0 +1,21 @@
+version: 2
+
+models:
+  - name: stg_assignment3_uk_wiki
+    description: Staging model combining desktop and mobile Wikipedia views
+    columns:
+      - name: src
+        description: Source of the traffic (desktop or mobile)
+        tests:
+          - not_null
+          - accepted_values:
+              values: ['desktop', 'mobile']
+
+  - name: int_assignment3_uk_wiki
+    description: Intermediate model with meta page flags
+
+  - name: fct_assignment3_top200
+    description: Fact table of top 200 most viewed articles (non-meta)
+
+  - name: fct_assignment3_mobile_outlier_hourly
+    description: Hourly view analysis for article with lowest mobile view percentage
